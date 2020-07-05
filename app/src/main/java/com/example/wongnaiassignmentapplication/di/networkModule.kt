@@ -11,5 +11,5 @@ val networkModule = module {
     single { ApiInterceptor().getInterceptor() }
     single { CustomOkHttpClient().create(interceptor = get()) }
     single { RetrofitManager(client = get(), converter = MoshiConverterFactory.create()) }
-    single<APIService> { get<RetrofitManager>().create(baseUrl = "https://api.coinranking.com/") }
+    single<APIService> { get<RetrofitManager>().create(baseUrl = "https://api.coinranking.com/v1/") }
 }

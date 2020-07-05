@@ -1,7 +1,11 @@
 package com.example.wongnaiassignmentapplication.model
 
+import androidx.annotation.Keep
+import com.squareup.moshi.Json
+
+@Keep
 data class CoinDataModel(
-    val base: BaseModel,
-    val coins: List<CoinModel>,
-    val stats: StatsModel
+    @field:Json(name="base") val base: BaseModel,
+    @field:Json(name="coins") val coins: List<CoinModel>,
+    @field:Json(name="stats") val stats: StatsModel
 )

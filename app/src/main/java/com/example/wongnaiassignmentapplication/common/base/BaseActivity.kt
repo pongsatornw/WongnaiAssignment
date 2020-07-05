@@ -6,9 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
 @Suppress("Registered")
-class BaseActivity<T: ViewBinding>: AppCompatActivity() {
+abstract class BaseActivity<T: ViewBinding>: AppCompatActivity() {
 
     open val viewModel: ViewModel
         get() = BaseViewModel()
+
+    open lateinit var binding: T
+
+    abstract fun initViewModel()
+
+    abstract fun initEventListener()
 
 }
