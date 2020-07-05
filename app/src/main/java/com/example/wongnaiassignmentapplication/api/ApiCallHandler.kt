@@ -25,6 +25,10 @@ object ApiCallHandler {
                }
            }
 
+           /**
+            * HANDLE NETWORK ERROR.
+            * */
+
            Log.e("CALL_ERROR", ex.message?:"")
 
            BaseResult<T>()
